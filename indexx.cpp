@@ -87,6 +87,7 @@ int main() {
                 if (isInitialized) {
                     cout << "Середнє арифметичне: " << average << endl;
                 }
+                waitForReturnToMenu();
                 break;
             }
             case 5:
@@ -106,6 +107,7 @@ int main() {
 }
 
 void displayMenu() {
+    clearConsole();
     cout << "\nМеню вибору дії:\n";
     cout << "1. Ввести елементи масиву\n";
     cout << "2. Вивести елементи масиву\n";
@@ -166,9 +168,12 @@ double calculateAverage(const int arr[], int length, bool isInitialized) {
     }
     double average = static_cast<double>(sum) / length;
 
+   
+
+    cout << "Середнє арифметичне: " << average << endl;
     cout << "Операція успішно виконана.\n";
+
     return average;
-    waitForReturnToMenu();
 }   
 
 void sortArray(int arr[], int length, bool isInitialized) {
@@ -185,6 +190,10 @@ void sortArray(int arr[], int length, bool isInitialized) {
         }
     }
 
+    cout << "Відсортований масив:\n";
+    for (int i = 0; i < length; ++i) {  
+        cout << arr[i] << " ";
+    }   
     cout << "Операція успішно виконана.\n";
     waitForReturnToMenu();
 }   
@@ -213,7 +222,9 @@ void findMinMax(const int arr[], int length, bool isInitialized, int &min, int &
         }
     }
 
-    cout << "Операція успішно виконана.\n";
+    cout << "Мінімальне значення:" << min << endl;
+    cout << "Максимальне значення:" << max << endl;
+    cout << "Операція успішно виконана" << endl;
     waitForReturnToMenu();
 }   
 
